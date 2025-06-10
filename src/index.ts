@@ -4,8 +4,16 @@ import {cors} from 'hono/cors';
 import {Resend} from "resend";
 import 'dotenv/config';
 
+
 const app = new Hono();
 app.use('*', cors());
+
+serve({
+    fetch: app.fetch,
+    port: process.env.PORT ? Number(process.env.PORT) : 3000,
+}, (info) => {
+    console.log(`Server is running on http://localhost:${info.port}`)
+})
 
 const resend = new Resend(process.env.RESEND_APY_KEY);
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
@@ -80,10 +88,3 @@ app.get('/', (c) => {
 })
 
 export default app;
-
-serve({
-    fetch: app.fetch,
-    port: 8000
-}, (info) => {
-    console.log(`Server is running on http://localhost:${info.port}`)
-})
