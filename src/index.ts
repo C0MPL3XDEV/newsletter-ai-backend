@@ -68,10 +68,10 @@ app.post('/subscribe', async (c) => {
                </footer>
             </div>`
         });
-        return c.json({success: true, message: 'Email registrata con successo'});
+        return c.json({success: true, message: 'Email successfully registered.'});
     } catch (err) {
         console.log(err);
-        return c.json({error: 'Errore durante la registrazione'}, 500);
+        return c.json({error: 'Error while register the email'}, 500);
     }
 })
 
