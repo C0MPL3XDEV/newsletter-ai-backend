@@ -87,4 +87,8 @@ app.get('/', (c) => {
     return c.text('Hello Hono!')
 })
 
+app.get('/test-call', (c) => {
+    return c.json({success: true, message: 'Hello Hono!'});
+})
+
 export default app;
