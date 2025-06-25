@@ -42,7 +42,7 @@ app.post('/subscribe', async (c) => {
              color: #e5e5e5;
              text-align: center;
              ">
-               <img src="https://github.com/C0MPL3XDEV/newsletter-ai-backend/blob/main/src/images/svgviewer-png-output(2).png" alt="codexpulse" height="30" width="30">      
+               <img src="https://raw.githubusercontent.com/C0MPL3XDEV/newsletter-ai-backend/main/src/images/svgviewer-png-output(2).png" alt="codexpulse" height="30" width="30">      
                <h1 style="
                   font-size: 1.75rem;
                   font-weight: bold;
@@ -59,10 +59,10 @@ app.post('/subscribe', async (c) => {
                <p style="margin-top: 1rem;">In the meantime, follow us on:</p>
                <div style="margin-top: 0.5rem;">
                   <a href="https://github.com/C0MPL3XDEV" style="margin: 0 10px;" target="_blank" rel="noopener">
-                    <img src="https://github.com/C0MPL3XDEV/newsletter-ai-backend/blob/main/src/images/svgviewer-png-output(1).png" alt="github" width="30" height="30">
+                    <img src="https://raw.githubusercontent.com/C0MPL3XDEV/newsletter-ai-backend/main/src/images/svgviewer-png-output(1).png" alt="github" width="30" height="30">
                   </a>
                   <a href="https://instagram.com/carmine.developer" style="margin: 0 5px;" target="_blank" rel="noopener">
-                    <img src="https://github.com/C0MPL3XDEV/newsletter-ai-backend/blob/main/src/images/svgviewer-png-output.png" alt="instagram" width="30" height="30">
+                    <img src="https://raw.githubusercontent.com/C0MPL3XDEV/newsletter-ai-backend/main/src/images/svgviewer-png-output.png" alt="instagram" width="30" height="30">
                   </a>
                </div>
                <footer style="margin-top: 2rem; font-size: 0.85rem; color: #888;">
