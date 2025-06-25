@@ -38,8 +38,8 @@ app.post('/subscribe', async (c) => {
             html: `<div style="
              font-family: 'Segoe UI', sans-serif;
              padding: 2rem;
-             background-color: #ffffff;
-             color: #0f0f0f;
+             background-color: #0f0f11;
+             color: #e5e5e5;
              text-align: center;
              ">
                <img src="https://raw.githubusercontent.com/C0MPL3XDEV/newsletter-ai-backend/main/src/images/svgviewer-png-output(2).png" alt="codexpulse" height="30" width="30">      
