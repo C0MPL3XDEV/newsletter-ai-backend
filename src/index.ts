@@ -32,7 +32,7 @@ app.post('/subscribe', async (c) => {
         });
 
         await resend.emails.send({
-            from: 'CodexPulse <no-reply@newsletter.carminedeveloper.it>',
+            from: 'CodexPulse <codexpulse@newsletter.carminedeveloper.it>',
             to: [email],
             subject: 'Welcome to CodexPulse!',
             html: `<div style="
