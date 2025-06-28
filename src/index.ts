@@ -17,12 +17,35 @@ serve({
 
 const resend = new Resend(process.env.RESEND_APY_KEY);
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
+const RECAPTCHA_SECRET_KEY = process.env.CAPTCHA_SECRET_KEY;
+
+
+async function verifyRecaptcha(token: string) {
+    const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `secret=${RECAPTCHA_SECRET_KEY}&response=${token}`
+    });
+
+    const data = await res.json();
+    console.log('Google Verify', data);
+    return data.success && data.score > 0.5;
+}
 
 app.post('/subscribe', async (c) => {
-    const {email} = await c.req.json();
+    const {email, recaptchaToken} = await c.req.json();
 
-    if (!email || !email.includes('@')) {
+    if (!email || !recaptchaToken) {
+        return c.json({error: 'Email or token missing'}, 400);
+    }
+
+    if (!email.includes('@')) {
         return c.json({message: 'Insert a valid email address.'}, 422);
+    }
+
+    const isValid = await verifyRecaptcha(recaptchaToken);
+    if (!isValid) {
+        return c.json({error: 'Invalid captcha'}, 400);
     }
 
     try {
