@@ -2,10 +2,11 @@ import {serve} from '@hono/node-server'
 import {Hono} from 'hono';
 import {Resend} from "resend";
 import 'dotenv/config';
+import {cors} from 'hono/cors';
 
 
 const app = new Hono();
-app.use('*', (c, next) => {
+app.use('*', cors(), (c, next) => {
     c.res.headers.set('Content-Security-Policy',
         "default-src 'self'; " +
         "script-src 'self' https://www.google.com https://www.gstatic.com; " +
